@@ -1,2 +1,6 @@
-export { run } from './runner.js';
-export { add } from './math.js';
+import { run } from './runner.js';
+
+run().catch((err) => {
+  // eslint-disable-next-line no-console
+  console.error(err);
+});
