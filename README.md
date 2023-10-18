@@ -1,6 +1,6 @@
-# npm-package-template
+# ts-backend-template
 
-npm package を作るための @mizdra 専用プロジェクトテンプレート。
+TypeScript で Web アプリケーションのバックエンドを作るためのプロジェクトテンプレート。
 
 ## 技術スタック
 
