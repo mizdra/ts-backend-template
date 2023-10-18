@@ -39,6 +39,7 @@
     "node": ">=20.6.0"
   },
   "dependencies": {
+    "@hono/node-server": "^1.2.0",
     "hono": "^3.8.1",
     "tsx": "^3.14.0"
   }
