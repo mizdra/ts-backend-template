@@ -1,6 +1,12 @@
-import { run } from './runner.js';
+import { serve } from '@hono/node-server';
+import { Hono } from 'hono';
 
-run().catch((err) => {
-  // eslint-disable-next-line no-console
-  console.error(err);
+const app = new Hono();
+
+app.get('/', (c) => {
+  return c.text('Hello Hono!');
 });
+
+serve({ fetch: app.fetch, port: 3000 });
+// eslint-disable-next-line no-console
+console.log('Server is running on http://localhost:3000');

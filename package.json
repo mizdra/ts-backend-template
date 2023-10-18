@@ -9,8 +9,8 @@
   "license": "CC0-1.0",
   "private": true,
   "scripts": {
-    "build": "tsc -p tsconfig.build.json",
-    "dev": "npm run build && node bin/example-command.js",
+    "start": "node --import tsx/esm ./src/index.ts",
+    "dev": "node --watch --import tsx/esm ./src/index.ts",
     "lint": "run-s -c lint:*",
     "lint:tsc": "tsc",
     "lint:eslint": "eslint --cache --cache-location node_modules/.cache/eslint/ --cache-strategy content .",
@@ -37,5 +37,9 @@
   },
   "engines": {
     "node": ">=20.6.0"
+  },
+  "dependencies": {
+    "hono": "^3.8.1",
+    "tsx": "^3.14.0"
   }
 }
