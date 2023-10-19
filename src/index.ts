@@ -1,11 +1,5 @@
 import { serve } from '@hono/node-server';
-import { Hono } from 'hono';
-
-const app = new Hono();
-
-app.get('/', (c) => {
-  return c.text('Hello Hono!');
-});
+import { app } from './lib/app.js';
 
 const server = serve({ fetch: app.fetch, port: 3000 });
 // eslint-disable-next-line no-console
