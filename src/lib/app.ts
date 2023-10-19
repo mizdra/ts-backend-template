@@ -1,5 +1,5 @@
 import { Hono } from 'hono';
-import { yoga } from './graphql-server.js';
+import { yoga } from '../graphql/server.js';
 
 export const app = new Hono();
 
