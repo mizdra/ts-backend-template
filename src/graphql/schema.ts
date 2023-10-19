@@ -16,8 +16,8 @@ builder.queryType({
 });
 
 export const schema = builder.toSchema({});
+export const schemaAsString = printSchema(lexicographicSortSchema(schema));
 
 export async function writeSchemaFile() {
-  const schemaAsString = printSchema(lexicographicSortSchema(schema));
   await writeFile(join(fileURLToPath(import.meta.url), '../../../schema.graphql'), schemaAsString);
 }
