@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 // pothos や graphql-yoga では `graphql/index.js` (CJS版) が import されているようなので、実行時エラーを避けるべく、ここでも同様に CJS版 を import してる。
 // ref: https://github.com/graphql/graphql-js/issues/594#issuecomment-926683870
 import { printSchema, lexicographicSortSchema } from 'graphql/index.js';
+import { prisma } from '../prisma/client.js';
 import { builder } from './builder.js';
 
 builder.queryType({
@@ -16,6 +17,28 @@ builder.queryType({
       },
       resolve: (parent, { name }) => `hello, ${name || 'World'}`,
     }),
+    user: t.prismaField({
+      type: 'User',
+      description: '指定した id のユーザを返す。ユーザが見つからなければ null。',
+      nullable: true,
+      args: {
+        id: t.arg.id({ required: true, description: 'ID' }),
+      },
+      resolve: async (query, parent, args) =>
+        prisma.user.findUnique({
+          ...query,
+          where: { id: args.id },
+        }),
+    }),
+  }),
+});
+
+builder.prismaObject('User', {
+  description: 'ユーザ',
+  fields: (t) => ({
+    id: t.exposeID('id', { description: 'ID' }),
+    email: t.exposeString('email', { description: 'ユーザのメールアドレス' }),
+    name: t.exposeString('name', { description: 'ユーザの名前' }),
   }),
 });
 
