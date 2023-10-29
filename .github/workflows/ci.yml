@@ -12,9 +12,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: ./.github/actions/setup-node
-      - uses: ./.github/actions/node-modules-cache
+      - uses: actions/cache@v3
         with:
-          cache-key-prefix: lint
+          path: node_modules/.cache
+          key: lint-node-modules-cache-${{ github.sha }}
+          restore-keys: lint-node-modules-cache-
       - run: npm install
       - run: npm run lint
 
@@ -23,8 +25,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: ./.github/actions/setup-node
-      - uses: ./.github/actions/node-modules-cache
+      - uses: actions/cache@v3
         with:
-          cache-key-prefix: test
+          path: node_modules/.cache
+          key: test-node-modules-cache-${{ github.sha }}
+          restore-keys: test-node-modules-cache-
       - run: npm install
       - run: npm run test
