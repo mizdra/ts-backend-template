@@ -16,6 +16,9 @@
     "lint:prettier": "prettier --cache --check .",
     "test": "vitest"
   },
+  "prisma": {
+    "seed": "node --env-file=.env.development --import tsx/esm scripts/seed.ts"
+  },
   "prettier": "@mizdra/prettier-config-mizdra",
   "devDependencies": {
     "@mizdra/eslint-config-mizdra": "^2.0.0",
