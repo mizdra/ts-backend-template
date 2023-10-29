@@ -6,6 +6,15 @@ import { prisma } from '../prisma/client.js';
 
 export const builder = new SchemaBuilder<{
   PrismaTypes: PrismaTypes;
+  Scalars: {
+    // pothos は GraphQL の仕様に準拠して ID をデフォルトで `string | number` として扱うが、
+    // 扱いづらいので、ここでは `string` として扱うようにしている。型安全ではないので良くはないと思う...
+    // ref: https://github.com/hayes/pothos/issues/95
+    ID: {
+      Input: string;
+      Output: string;
+    };
+  };
 }>({
   plugins: [PrismaPlugin],
   prisma: {
