@@ -1,6 +1,15 @@
 import { prisma } from '../../prisma/client.js';
 import { builder } from '../builder.js';
 
+builder.prismaObject('User', {
+  description: 'ユーザ',
+  fields: (t) => ({
+    id: t.exposeID('id', { description: 'ID' }),
+    email: t.exposeString('email', { description: 'ユーザのメールアドレス' }),
+    name: t.exposeString('name', { description: 'ユーザの名前' }),
+  }),
+});
+
 builder.queryFields((t) => ({
   user: t.prismaField({
     type: 'User',
@@ -16,12 +25,3 @@ builder.queryFields((t) => ({
       }),
   }),
 }));
-
-builder.prismaObject('User', {
-  description: 'ユーザ',
-  fields: (t) => ({
-    id: t.exposeID('id', { description: 'ID' }),
-    email: t.exposeString('email', { description: 'ユーザのメールアドレス' }),
-    name: t.exposeString('name', { description: 'ユーザの名前' }),
-  }),
-});
