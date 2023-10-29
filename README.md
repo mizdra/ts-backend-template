@@ -21,6 +21,7 @@ $ npm i
 $ docker compose up -d
 $ npm run generate
 $ npm run migrate:dev
+$ npx prisma db seed
 $ npm run dev
 ```
 
