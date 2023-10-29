@@ -24,6 +24,10 @@ $ npm run migrate:dev
 $ npm run dev
 ```
 
+## GraphiQL
+
+- http://localhost:3000/graphql
+
 ## License
 
 CC0-1.0
