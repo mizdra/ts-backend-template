@@ -4,6 +4,7 @@
 module.exports = {
   root: true,
   extends: ['@mizdra/mizdra', '@mizdra/mizdra/+node', '@mizdra/mizdra/+prettier'],
+  reportUnusedDisableDirectives: true,
   parserOptions: {
     ecmaVersion: 2022,
   },

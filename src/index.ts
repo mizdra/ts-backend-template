@@ -9,7 +9,6 @@ if (process.env['NODE_ENV'] === 'development') {
 }
 
 const server = serve({ fetch: app.fetch, port: 3000 });
-// eslint-disable-next-line no-console
 console.log('Server is running on http://localhost:3000');
 
 // Graceful shutdown
