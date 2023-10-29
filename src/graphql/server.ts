@@ -1,6 +1,6 @@
 import { useDisableIntrospection } from '@graphql-yoga/plugin-disable-introspection';
 import { createYoga } from 'graphql-yoga';
-import { schema } from './schema.js';
+import { schema } from './schema/index.js';
 
 export const yoga = createYoga({
   schema,

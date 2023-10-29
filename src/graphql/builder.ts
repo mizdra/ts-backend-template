@@ -23,3 +23,6 @@ export const builder = new SchemaBuilder<{
     onUnusedQuery: process.env['NODE_ENV'] === 'production' ? null : 'warn',
   },
 });
+
+builder.queryType();
+builder.mutationType();

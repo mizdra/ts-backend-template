@@ -1,6 +1,6 @@
 import { serve } from '@hono/node-server';
 import { app } from './app.js';
-import { writeSchemaFile } from './graphql/schema.js';
+import { writeSchemaFile } from './graphql/schema/index.js';
 import { prisma } from './prisma/client.js';
 
 // npm run dev で起動したら、都度最新のスキーマを書き出す
