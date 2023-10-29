@@ -19,9 +19,15 @@ TypeScript で Web アプリケーションのバックエンドを作るため�
 ```bash
 $ npm i
 $ docker compose up -d
+$ npm run generate
 $ npm run migrate:dev
+$ npx prisma db seed
 $ npm run dev
 ```
+
+## GraphiQL
+
+- http://localhost:3000/graphql
 
 ## License
 

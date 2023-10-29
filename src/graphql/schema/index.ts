@@ -6,22 +6,16 @@ import { fileURLToPath } from 'node:url';
 // pothos や graphql-yoga では `graphql/index.js` (CJS版) が import されているようなので、実行時エラーを避けるべく、ここでも同様に CJS版 を import してる。
 // ref: https://github.com/graphql/graphql-js/issues/594#issuecomment-926683870
 import { printSchema, lexicographicSortSchema } from 'graphql/index.js';
-import { builder } from './builder.js';
+import { builder } from '../builder.js';
 
-builder.queryType({
-  fields: (t) => ({
-    hello: t.string({
-      args: {
-        name: t.arg.string(),
-      },
-      resolve: (parent, { name }) => `hello, ${name || 'World'}`,
-    }),
-  }),
-});
+import './hello.js';
+import './user.js';
 
 export const schema = builder.toSchema({});
 export const schemaAsString = printSchema(lexicographicSortSchema(schema));
 
 export async function writeSchemaFile() {
-  await writeFile(join(fileURLToPath(import.meta.url), '../../../schema.graphql'), schemaAsString);
+  const path = join(fileURLToPath(import.meta.url), '../../../../schema.graphql');
+  console.log(`Writing schema to ${path}...`);
+  await writeFile(path, schemaAsString);
 }

@@ -10,6 +10,7 @@
   "scripts": {
     "start": "node --env-file=.env.production --import tsx/esm ./src/index.ts",
     "dev": "node --watch --env-file=.env.development --import tsx/esm ./src/index.ts",
+    "generate": "npx prisma generate",
     "lint": "run-s -c lint:*",
     "lint:tsc": "tsc",
     "lint:eslint": "eslint --cache --cache-location node_modules/.cache/eslint/ --cache-strategy content .",
@@ -46,6 +47,7 @@
     "@graphql-yoga/plugin-disable-introspection": "^2.0.0",
     "@hono/node-server": "^1.2.0",
     "@pothos/core": "^3.38.0",
+    "@pothos/plugin-prisma": "^3.61.0",
     "@prisma/client": "^5.4.2",
     "graphql": "^16.8.1",
     "graphql-yoga": "^5.0.0",
