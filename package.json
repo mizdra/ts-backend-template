@@ -14,7 +14,8 @@
     "lint:tsc": "tsc",
     "lint:eslint": "eslint --cache --cache-location node_modules/.cache/eslint/ --cache-strategy content .",
     "lint:prettier": "prettier --cache --check .",
-    "test": "vitest"
+    "test": "vitest",
+    "migrate:dev": "env $(cat .env.development) npx prisma migrate deploy"
   },
   "prisma": {
     "seed": "node --env-file=.env.development --import tsx/esm scripts/seed.ts"
