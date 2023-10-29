@@ -1,7 +1,6 @@
 // Usage: npx prisma db seed
 
-import { PrismaClient } from '@prisma/client';
-const prisma = new PrismaClient();
+import { prisma } from '../src/prisma/client.js';
 
 try {
   const alice = await prisma.user.upsert({
