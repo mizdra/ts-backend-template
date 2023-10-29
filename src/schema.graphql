@@ -1,0 +1,23 @@
+type Mutation
+
+type Query {
+  hello(name: String): String!
+
+  """指定した id のユーザを返す。ユーザが見つからなければ null。"""
+  user(
+    """ID"""
+    id: ID!
+  ): User
+}
+
+"""ユーザ"""
+type User {
+  """ユーザのメールアドレス"""
+  email: String!
+
+  """ID"""
+  id: ID!
+
+  """ユーザの名前"""
+  name: String!
+}
