@@ -19,6 +19,7 @@ TypeScript で Web アプリケーションのバックエンドを作るため�
 ```bash
 $ npm i
 $ docker compose up -d
+$ npm run generate
 $ npm run migrate:dev
 $ npm run dev
 ```

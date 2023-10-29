@@ -10,6 +10,7 @@
   "scripts": {
     "start": "node --env-file=.env.production --import tsx/esm ./src/index.ts",
     "dev": "node --watch --env-file=.env.development --import tsx/esm ./src/index.ts",
+    "generate": "npx prisma generate",
     "lint": "run-s -c lint:*",
     "lint:tsc": "tsc",
     "lint:eslint": "eslint --cache --cache-location node_modules/.cache/eslint/ --cache-strategy content .",
