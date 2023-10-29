@@ -17,14 +17,10 @@ TypeScript で Web アプリケーションのバックエンドを作るため�
 ## Usage
 
 ```bash
-cd app_name
-wget -O - https://github.com/mizdra/npm-package-template/archive/main.tar.gz | tar xzvf - --strip=1
-grep -l 'CC0-1.0' | xargs sed -i '' -e 's/CC0-1.0/MIT/g'
-license mit > LICENSE
-
-## Init project
-npm install
-npm run dev
+$ npm i
+$ docker compose up -d
+$ npm run migrate:dev
+$ npm run dev
 ```
 
 ## License
