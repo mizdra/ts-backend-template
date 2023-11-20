@@ -19,7 +19,7 @@
     "migrate:dev": "env $(cat .env.development) npx prisma migrate deploy"
   },
   "prisma": {
-    "seed": "node --env-file=.env.development --import tsx/esm scripts/seed.ts"
+    "seed": "./scripts/seed.ts"
   },
   "prettier": "@mizdra/prettier-config-mizdra",
   "devDependencies": {

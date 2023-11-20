@@ -1,4 +1,5 @@
-// Usage: npx prisma db seed
+#!/usr/bin/env -S node --env-file .env.development --import tsx/esm
+// Usage: `npx prisma db seed`
 
 import { prisma } from '../src/prisma/client.js';
 
