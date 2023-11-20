@@ -8,8 +8,8 @@
   "license": "CC0-1.0",
   "private": true,
   "scripts": {
-    "start": "node --env-file=.env.production --import tsx/esm ./src/index.ts",
-    "dev": "node --watch --env-file=.env.development --import tsx/esm ./src/index.ts",
+    "start": "node --env-file .env.production --import tsx/esm ./src/index.ts",
+    "dev": "node --watch --env-file .env.development --import tsx/esm ./src/index.ts",
     "generate": "npx prisma generate",
     "lint": "run-s -c lint:*",
     "lint:tsc": "tsc",
